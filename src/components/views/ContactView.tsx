@@ -151,24 +151,25 @@ export const ContactView: React.FC<{ onNavigate: (path: string) => void }> = ({ 
             </div>
 
             {/* Embedded Google Map */}
-            <div className="rounded-xl overflow-hidden border border-white/10 h-48 bg-[#181818] relative">
+            <div className="rounded-xl overflow-hidden border border-[#C99A3D]/40 h-56 bg-[#181818] relative shadow-lg">
               <iframe
                 title="Adheera Saloon & Tatoos Location Map"
                 src="https://www.google.com/maps?q=East,+First+St,+Kumar+Nagar,+Renganatha+Puram,+Tiruppur,+Tamil+Nadu+641603&output=embed"
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
+                style={{ border: 0 }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="absolute bottom-2 right-2">
+              <div className="absolute bottom-2.5 right-2.5">
                 <a
                   href={BUSINESS_CONFIG.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-2.5 py-1 rounded bg-[#080808]/90 text-[10px] font-bold text-[#E6C46A] border border-[#C99A3D]/50 hover:bg-[#C99A3D] hover:text-black transition-colors"
+                  className="px-3 py-1.5 rounded bg-[#080808]/95 text-xs font-bold text-[#E6C46A] border border-[#C99A3D]/70 hover:bg-[#C99A3D] hover:text-[#080808] transition-colors shadow-md flex items-center gap-1"
                 >
-                  View Large Map
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Open Directions</span>
                 </a>
               </div>
             </div>

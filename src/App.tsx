@@ -23,23 +23,31 @@ export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
     return window.location.pathname || '/';
   });
-  const [preselectedServiceId, setPreselectedServiceId] = useState<string | undefined>();
+  const [preselectedServiceId, setPreselectedServiceId] = useState<string | undefined>(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('service') || undefined;
+    }
+    return undefined;
+  });
 
   // Handle browser back and forward navigation
   useEffect(() => {
     const handlePopState = () => {
       setCurrentPath(window.location.pathname || '/');
+      const params = new URLSearchParams(window.location.search);
+      const sId = params.get('service');
+      if (sId) setPreselectedServiceId(sId);
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   const navigate = (path: string, serviceId?: string) => {
-    if (serviceId) {
-      setPreselectedServiceId(serviceId);
-    }
+    setPreselectedServiceId(serviceId);
     setCurrentPath(path);
-    window.history.pushState({}, '', path);
+    const targetUrl = serviceId ? `${path}?service=${serviceId}` : path;
+    window.history.pushState({}, '', targetUrl);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
