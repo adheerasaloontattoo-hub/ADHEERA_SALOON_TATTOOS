@@ -46,6 +46,8 @@ export const SEOHead: React.FC<SEOProps> = ({ title, description, path, schema }
     updateMetaTag('og:title', title);
     updateMetaTag('og:description', description);
     updateMetaTag('og:url', canonicalUrl);
+    updateMetaTag('og:image', `${BUSINESS_CONFIG.siteUrl}/adheera-logo.png`);
+    updateMetaTag('twitter:image', `${BUSINESS_CONFIG.siteUrl}/adheera-logo.png`);
 
     // 5. Update Dynamic Schema Script
     const schemaId = 'dynamic-page-schema';

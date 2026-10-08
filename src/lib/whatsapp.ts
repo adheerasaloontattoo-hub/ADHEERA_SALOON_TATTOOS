@@ -18,6 +18,7 @@ export const BUSINESS_CONFIG = {
   googleMapsUrl: 'https://maps.app.goo.gl/STwg9t4x9UcePXPt9',
   googleMapsEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.0!2d77.34!3d11.12!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDA3JzEyLjAiTiA3N8KwMjAnMjQuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin',
   hours: 'Monday - Sunday: 9:00 AM - 9:30 PM',
+  logoUrl: '/adheera-logo.png',
   siteUrl: 'https://ais-pre-vasr45spfom6g4wxhes5zk-976818229313.asia-southeast1.run.app'
 };
 
